@@ -1,0 +1,46 @@
+This document explains how I used assistance with parts B and C, which was used as a learning aid throughout my code.
+AI assistance was used to clarify concepts, fix code issues and improve my understanding of Transformer KV-cache behavior.
+
+
+##Part B: KV-Cache Theory and Architecture
+Tasks:
+- Write explanations for KV-cache architecture, bandwisth/computation analysis and memory footprint
+- Describe how cache placement, quantization, and effeciency impact inference
+
+Challenges faced:
+- Understanding how the KV-cache actually stores keys and values across decoding steps.
+- Connecting theoretical ideas (O(S^2)) -> O(S) scaling, bandwidth vs compute) to real hardware behavior
+
+How AI helped:
+I asked prompts such as:
+- "Can you explain how the KV cache works in Transformers and why it improves inference speed?"
+- "How does cache precision affect energy efficiency?"
+- "Can you explain Latency scaling with sequence length?"
+
+AI provided structured explanations and examples that clarified my understanding of memory trade-offs and afficiency
+I used these insights to rewrite/add on to my responses in my own words.
+
+##Part C: Coding Experiments
+Tasks:
+- Implementing and running experiments measuring performance with/without KV-Cache, batching effects and precision
+- Record timing, memory usage and throughput results for each task
+
+Challenges faced:
+- Setting up the base script (run_model.py) correctly using AutoModelCausalLM
+- Debudding issues with tokenizer padding, CSV writing
+- Understanding how to measure memory (psutil) and timing in a repeatable way
+
+How AI helped:
+I asked prompts such as:
+-"Why do I get a padding error with Distilgpt-2 when batching?"
+- "How can I fix my memory measurement code using psutil in python?"
+-"Can you check my code and help me understand why I am recieving this error, and how I could fix it?"
+
+AI helped me identify syntax and logic errors and explained hoe to properly fix these issues, as well as explain how to properly use tokenizer, caching flags and generation functions.
+With this help, I successfully built and ran Experiment 1, 2, and 3, each generating results and outputs correctly.
+
+Reflection:
+AI acted as an assitiance/debugger throughout my work, rather than producing final answers with no explanations.
+I learned how the Transformer generation process, caching and precision work in practice.
+By asking targeted questions and then applying explanations, I gained a clearer understanding to all sides of this assignment.
+Overall, AI support, helped me better understand concepts that I wasn't fully confident in or fully understood. 
